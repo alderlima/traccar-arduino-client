@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
-android { 
+android {
     namespace = "com.smartatendimentos.traccar"
     compileSdk = 34
 

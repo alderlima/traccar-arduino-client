@@ -2,9 +2,15 @@ name: Build APK
 
 on:
   push:
-    branches: [ main, master, develop ]
+    branches:
+      - main
+      - master
+      - develop
   pull_request:
-    branches: [ main, master, develop ]
+    branches:
+      - main
+      - master
+      - develop
 
 jobs:
   build:
@@ -25,10 +31,13 @@ jobs:
         uses: android-actions/setup-android@v3
 
       - name: Grant execute permission to gradlew
-        run: chmod +x gradlew
+        run: chmod +x ./gradlew
 
+      # Build do APK (SEM --no-daemon no comando)
       - name: Build APK Release
-        run: ./gradlew :app:assembleRelease --no-daemon
+        run: ./gradlew :app:assembleRelease
+        env:
+          GRADLE_OPTS: "-Dorg.gradle.daemon=false"
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
