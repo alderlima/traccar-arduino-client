@@ -14,7 +14,7 @@ jobs:
       GRADLE_OPTS: -Dorg.gradle.daemon=false
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up JDK 17
@@ -27,17 +27,15 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Grant execute permission
-        run: chmod +x gradlew
+      - name: Grant execute permission to Gradle
+        run: chmod +x ./gradlew
 
       - name: Build Release APK
+        shell: bash
         run: |
-          ./gradlew clean :app:assembleRelease \
-            --no-daemon \
-            --stacktrace \
-            --info
+          ./gradlew clean :app:assembleRelease --no-daemon --stacktrace --info
 
-      - name: Upload APK
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-release
