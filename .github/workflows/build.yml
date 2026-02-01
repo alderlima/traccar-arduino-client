@@ -36,15 +36,15 @@ jobs:
       - name: Clean build
         run: ./gradlew clean
 
-      - name: Build APK Release
+      - name: Build APK Debug
         run: ./gradlew :app:assembleDebug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         if: success()
         with:
-          name: app-release-apk
-          path: app/build/outputs/apk/release/*.apk
+          name: app-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
           retention-days: 30
 
       - name: Upload build logs on failure
