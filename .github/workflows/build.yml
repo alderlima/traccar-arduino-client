@@ -44,7 +44,7 @@ jobs:
         if: success()
         with:
           name: app-release-apk
-          path: app/build/outputs/apk/release/app-release.apk
+          path: app/build/outputs/apk/release/*.apk
           retention-days: 30
 
       - name: Upload build logs on failure
