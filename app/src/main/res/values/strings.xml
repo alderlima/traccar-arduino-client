@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Traccar Arduino Client</string>
+    <string name="settings">Configurações</string>
+    <string name="status">Status</string>
+    <string name="connected">Conectado</string>
+    <string name="disconnected">Desconectado</string>
+    <string name="ignition_on">Ignição Ligada</string>
+    <string name="ignition_off">Ignição Desligada</string>
+    <string name="engine_cut">Corte do Motor</string>
+    <string name="activate_cut">Ativar Corte</string>
+    <string name="deactivate_cut">Desativar Corte</string>
+    <string name="server_address">Endereço do Servidor</string>
+    <string name="device_id">ID do Dispositivo</string>
+    <string name="save">Salvar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="location">Localização</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="accuracy">Precisão</string>
+    <string name="speed">Velocidade</string>
+    <string name="arduino_status">Status Arduino</string>
+    <string name="traccar_status">Status Traccar</string>
+    <string name="gps_status">Status GPS</string>
+    <string name="last_update">Última Atualização</string>
+    <string name="start_tracking">Iniciar Rastreamento</string>
+    <string name="stop_tracking">Parar Rastreamento</string>
+    <string name="logs">Logs</string>
+</resources>

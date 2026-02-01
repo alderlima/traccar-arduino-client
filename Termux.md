@@ -1,0 +1,12 @@
+comandos para instalar e da permissão no diretório:
+git init
+git config --global --add safe.directory /storage/emulated/0/traccar-arduino-client
+git remote add origin https://github.com/alderlima/traccar-arduino-client
+git pull origin main
+
+
+Comando para atualizar e gerar apk:
+git status
+git add .
+git commit -m "Compilar APK Novo 01"
+git push origin main
