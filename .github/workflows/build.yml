@@ -23,21 +23,18 @@ jobs:
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
-          distribution: temurin
-          java-version: 17
-          cache: gradle
-
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
 
       - name: Grant execute permission to gradlew
-        run: chmod +x ./gradlew
+        run: chmod +x gradlew
 
-      # Build do APK (SEM --no-daemon no comando)
+      - name: Verify Gradle structure
+        run: ./gradlew tasks --no-daemon
+
       - name: Build APK Release
-        run: ./gradlew :app:assembleRelease
-        env:
-          GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+        run: ./gradlew :app:assembleRelease --no-daemon
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
